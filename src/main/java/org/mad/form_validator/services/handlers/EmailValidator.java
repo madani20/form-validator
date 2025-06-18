@@ -1,8 +1,8 @@
 package org.mad.form_validator.services.handlers;
 
-import jakarta.validation.ValidationException;
-import org.mad.form_validator.api.ValidationController;
+
 import org.mad.form_validator.dto.RequestDTO;
+import org.mad.form_validator.exceptions.ValidationException;
 import org.mad.form_validator.services.BaseValidationHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ public class EmailValidator extends BaseValidationHandler {
         String email = requestDTO.getEmail();
 
         if(email ==null || !email.matches("^\\S+@\\S+\\.\\S+$")) {
-            throw new ValidationException("Invalid email");
+            throw new ValidationException("email: must be a well-formed email address");
         }
         logger.info("Validated email");
     }

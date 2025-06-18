@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Schema(description = "Generic error response returned by the API")
 public class ErrorResponse {
 
-    //@Schema( description = "Error message", example = "You must ....")
+    @Schema( description = "Error message", example = "The password must contain at least 1 special character")
     private int status;
     private String error;
     private String message;

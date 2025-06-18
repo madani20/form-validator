@@ -34,7 +34,7 @@ private static final Logger logger = LoggerFactory.getLogger(ValidationService.c
 
         emailValidator.handler(requestDTO);
 
-        logger.info("Validated fields");
+        logger.info("Form fields validated");
     }
 
 

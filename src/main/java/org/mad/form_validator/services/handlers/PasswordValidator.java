@@ -22,16 +22,16 @@ public class PasswordValidator extends BaseValidationHandler {
         if (password.length() < 8 )
             throw new ValidationException("Password must contain at least 8 characters");
 
-        if (!password.matches("^(?=.*\\d)" ))
+        if (!password.matches((".*\\d.*"))) //"^(?=.*\\d)" ))
             throw new ValidationException("The password must contain at least 1 digit");
 
-        if (!password.matches("^(?=.*[A-Z])"))
+        if (!password.matches(".*[A-Z].*")) //"^(?=.*[A-Z])"))
             throw new ValidationException("The password must contain at least 1 capital letter");
 
-        if (!password.matches("^(?=.*[a-z])"))
+        if (!password.matches( ".*[a-z].*")) //"^(?=.*[a-z])"))
             throw new ValidationException("The password must contain at least 1 lowercase letter");
 
-        if (!password.matches("^(?=.*[^\\w\\s]).*$"))
+        if (!password.matches(".*[!@#$%^&*()_+\\-={}|\\[\\]:;\"'<>,.?/~`].*")) // ^(?=.*[^\\w\\s]).*$"))
             throw new ValidationException("The password must contain at least 1 special character");
 
         logger.info("Validated password");

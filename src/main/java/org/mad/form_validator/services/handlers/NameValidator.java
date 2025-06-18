@@ -1,7 +1,8 @@
 package org.mad.form_validator.services.handlers;
 
-import jakarta.validation.ValidationException;
+
 import org.mad.form_validator.dto.RequestDTO;
+import org.mad.form_validator.exceptions.ValidationException;
 import org.mad.form_validator.services.BaseValidationHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

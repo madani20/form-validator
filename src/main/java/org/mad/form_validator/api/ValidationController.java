@@ -13,7 +13,6 @@ import org.mad.form_validator.models.ErrorResponse;
 import org.mad.form_validator.services.registrationService.ValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -90,7 +89,25 @@ public class ValidationController {
                                           
                             }
                     )
-            )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponse.class),
+                            examples = {
+                                    @ExampleObject(
+                                            name = "Generic error",
+                                            value = """
+                                                        {
+                                                          "status": 500,
+                                                          "error": "Internal Server Error",
+                                                          "message": "An unexpected error occurred.",
+                                                          "path": "/api/validate",
+                                                          "timestamp": "2025-05-21T17:45:00"
+                                                        }
+                                                    """
+                                    )}))
     })
     @PostMapping("/validate")
     public ResponseEntity<String> validate(@RequestBody @Valid RequestDTO requestDTO) {
@@ -98,6 +115,6 @@ public class ValidationController {
 
         validationService.validate(requestDTO);
 
-        return ResponseEntity.ok("validation successful");
+        return ResponseEntity.ok("Validation successful");
     }
 }

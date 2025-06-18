@@ -69,7 +69,6 @@ public class GlobalExceptionHandler {
                 request.getRequestURI(),
                 LocalDateTime.now()
         );
-
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
     }
 
