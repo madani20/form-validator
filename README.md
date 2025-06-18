@@ -32,3 +32,25 @@ Chaque validateur hérite d'une classe abstraite BaseValidationHandler et peut d
     Déléguer au prochain maillon de la chaîne
 
     Lever une exception pour interrompre le processus
+```
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/madani20/form-validator.git
+cd form-validator
+./mvnw spring-boot:run
+
+ou avec docker:
+
+Création de l'image :
+    docker build -t <nom-de-image:tag> . (Ne pas oublier le point dans la commande, puis
+vérifier que l'image existe la commande docker ps -a)
+Lancement du conteneur :
+    docker run -d --name <nom-du-conteneur> -p 8080:8080 <nom-de-image:tag>
+    (lance le conteneur en mode détaché sur le port 8080)
+
+```
+
+## Une documentation interactive est disponible via Swagger :
+http://localhost:8080/swagger-ui.html
