@@ -24,3 +24,11 @@ Le projet met en œuvre le pattern **Chain of Responsibility** :
 
 ```text
 NameValidator ─▶ EmailValidator ─▶ PasswordValidator
+
+Chaque validateur hérite d'une classe abstraite BaseValidationHandler et peut décider de :
+
+    Traiter la requête
+
+    Déléguer au prochain maillon de la chaîne
+
+    Lever une exception pour interrompre le processus
