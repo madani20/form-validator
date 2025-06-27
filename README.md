@@ -1,6 +1,6 @@
-# 🛡️ Form Validation API (Chain of Responsibility)
+# 🛡️ Form Validation API 
 
-Une petite API REST en Java/Spring Boot pour valider progressivement les champs d'un formulaire d'inscription (nom, email, mot de passe), en utilisant le **patron de conception "Chain of Responsibility"**.
+Une petite API REST écrite en java pour valider progressivement les champs d'un formulaire d'inscription (nom, email, mot de passe).
 
 ---
 
@@ -20,7 +20,7 @@ Elle applique une chaîne de validations séquentielles. Si tous les champs sont
 
 ## 🧠 Patron de Conception
 
-Le projet met en œuvre le pattern **Chain of Responsibility** :
+Le projet est construit avec le patron de conception **Chain of Responsibility** :
 
 ```text
 NameValidator ─▶ EmailValidator ─▶ PasswordValidator
